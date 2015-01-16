@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-apt-get update
-apt-get -y install nginx
+wget http://nginx.org/download/nginx-1.6.2.tar.gz
+tar xvfz nginx-1.6.2.tar.gz
+cd nginx-1.6.2
+
+./configure
+make
+make install
 
 BINDIR=$(dirname "$0")
 
